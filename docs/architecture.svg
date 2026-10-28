@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/>
+    </marker>
+  </defs>
+
+  <!-- sources -->
+  <text x="30" y="34" font-weight="bold" fill="#1e2a3a">Sources</text>
+  <rect x="30" y="48" width="200" height="56" rx="6" fill="#eef3fa" stroke="#9fb4d3"/>
+  <text x="44" y="71" fill="#1e2a3a">Public data</text>
+  <text x="44" y="90" fill="#5b6472" font-size="11.5">census, schools, OpenStreetMap</text>
+  <rect x="30" y="118" width="200" height="56" rx="6" fill="#eef3fa" stroke="#9fb4d3"/>
+  <text x="44" y="141" fill="#1e2a3a">Network data</text>
+  <text x="44" y="160" fill="#5b6472" font-size="11.5">units, price table, CRM counts</text>
+  <text x="30" y="196" fill="#5b6472" font-size="11.5">Ingestion not published</text>
+
+  <!-- store -->
+  <rect x="290" y="48" width="170" height="126" rx="6" fill="#f6f7f9" stroke="#b9c0ca"/>
+  <text x="304" y="71" font-weight="bold" fill="#1e2a3a">PostgreSQL + PostGIS</text>
+  <text x="304" y="94" fill="#5b6472" font-size="11.5">every row carries a</text>
+  <text x="304" y="111" fill="#5b6472" font-size="11.5">source and a label:</text>
+  <text x="304" y="132" fill="#1e2a3a" font-size="12">fact | estimate</text>
+  <text x="304" y="155" fill="#5b6472" font-size="11.5">+ provenance log</text>
+
+  <!-- engine -->
+  <rect x="520" y="30" width="330" height="190" rx="6" fill="#fff8e1" stroke="#d9bf5c"/>
+  <text x="534" y="53" font-weight="bold" fill="#1e2a3a">Deterministic engine (Python, no LLM)</text>
+  <text x="534" y="80" fill="#1e2a3a">MPI per municipality</text>
+  <text x="534" y="102" fill="#1e2a3a">H3 res 8 hexagons + 2-ring influence area</text>
+  <text x="534" y="124" fill="#1e2a3a">Huff cannibalization against own units</text>
+  <text x="534" y="146" fill="#1e2a3a">Price model (log-log on local income)</text>
+  <text x="534" y="168" fill="#1e2a3a">Drive-time isochrones (OSRM)</text>
+  <text x="534" y="190" fill="#1e2a3a">Look-alikes + forecast behind an R² gate</text>
+
+  <!-- api -->
+  <rect x="290" y="260" width="170" height="70" rx="6" fill="#f6f7f9" stroke="#b9c0ca"/>
+  <text x="304" y="285" font-weight="bold" fill="#1e2a3a">FastAPI (read-only)</text>
+  <text x="304" y="306" fill="#5b6472" font-size="11.5">cache reset on data_version</text>
+
+  <!-- ui -->
+  <rect x="520" y="250" width="330" height="150" rx="6" fill="#eef7f0" stroke="#8cc29b"/>
+  <text x="534" y="273" font-weight="bold" fill="#1e2a3a">Web (Next.js + MapLibre + h3-js)</text>
+  <text x="534" y="300" fill="#1e2a3a">Studio: analyst view, layers, rankings,</text>
+  <text x="534" y="318" fill="#1e2a3a">area sheet with label on every number</text>
+  <text x="534" y="346" fill="#1e2a3a">Stage: meeting view for candidates,</text>
+  <text x="534" y="364" fill="#1e2a3a">hides internal prices, verifiable sentences</text>
+
+  <!-- agent -->
+  <rect x="30" y="260" width="200" height="70" rx="6" fill="#f6f7f9" stroke="#b9c0ca"/>
+  <text x="44" y="285" font-weight="bold" fill="#1e2a3a">Read tools for agents</text>
+  <text x="44" y="306" fill="#5b6472" font-size="11.5">LLM asks, engine answers</text>
+
+  <!-- arrows -->
+  <line x1="230" y1="76" x2="286" y2="96" stroke="#5b6472" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="230" y1="146" x2="286" y2="128" stroke="#5b6472" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="460" y1="100" x2="516" y2="100" stroke="#5b6472" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="516" y1="150" x2="464" y2="150" stroke="#5b6472" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="375" y1="174" x2="375" y2="256" stroke="#5b6472" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="460" y1="300" x2="516" y2="310" stroke="#5b6472" stroke-width="1.4" marker-end="url(#a)"/>
+  <line x1="300" y1="174" x2="190" y2="256" stroke="#5b6472" stroke-width="1.4" marker-end="url(#a)"/>
+</svg>
